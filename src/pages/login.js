@@ -9,7 +9,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const isInvalid = password == '' || emailAddress == '';
+    const isInvalid = password === '' || emailAddress === '';
 
     const handleLogin = () => {
 
@@ -20,5 +20,9 @@ export default function Login() {
     }, []);
 
     const {firebase} = useContext(FirebaseContext);
-    return <p>Welcome to the Login Page</p>
+    return (
+        <div className="container flex mx-auto max-w-screen-md items-center h-screen">
+            <p>I have no idea!</p>
+        </div>
+    );
 }
