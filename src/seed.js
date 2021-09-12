@@ -1,39 +1,39 @@
 export function seedDatabase(firebase) {
     const users = [
         {
-            userId: 'v5yz9yJxg6VTabfxuH5fvXoldH43',
-            username: 'karl',
-            fullName: 'Karl Hadwen',
-            emailAddress: 'karlhadwen@gmail.com',
+            userId: 'nSixfmNGDHNpwShYJR9JwZwQrvR2',
+            username: 'ankur',
+            fullName: 'Ankur Agarwal',
+            emailAddress: 'ankur@agarwal.com',
             following: ['2'],
             followers: ['2', '3', '4'],
             dateCreated: Date.now()
         },
         {
             userId: '2',
-            username: 'raphael',
-            fullName: 'Raffaello Sanzio da Urbino',
-            emailAddress: 'raphael@sanzio.com',
+            username: 'michael',
+            fullName: 'Michael Haeden',
+            emailAddress: 'michael@haeden.com',
             following: [],
-            followers: ['v5yz9yJxg6VTabfxuH5fvXoldH43'],
+            followers: ['nSixfmNGDHNpwShYJR9JwZwQrvR2'],
             dateCreated: Date.now()
         },
         {
             userId: '3',
-            username: 'dali',
-            fullName: 'Salvador Dalí',
-            emailAddress: 'salvador@dali.com',
+            username: 'devil',
+            fullName: 'Sailor Devil',
+            emailAddress: 'sailor@devil.com',
             following: [],
-            followers: ['v5yz9yJxg6VTabfxuH5fvXoldH43'],
+            followers: ['nSixfmNGDHNpwShYJR9JwZwQrvR2'],
             dateCreated: Date.now()
         },
         {
             userId: '4',
-            username: 'orwell',
-            fullName: 'George Orwell',
-            emailAddress: 'george@orwell.com',
+            username: 'mr_ankur',
+            fullName: 'Ankur Agarwal',
+            emailAddress: 'ankur@code.com',
             following: [],
-            followers: ['v5yz9yJxg6VTabfxuH5fvXoldH43'],
+            followers: ['nSixfmNGDHNpwShYJR9JwZwQrvR2'],
             dateCreated: Date.now()
         }
     ];
@@ -56,11 +56,11 @@ export function seedDatabase(firebase) {
                 likes: [],
                 comments: [
                     {
-                        displayName: 'dali',
+                        displayName: 'devil',
                         comment: 'Love this place, looks like my animal farm!'
                     },
                     {
-                        displayName: 'orwell',
+                        displayName: 'michael',
                         comment: 'Would you mind if I used this picture?'
                     }
                 ],
