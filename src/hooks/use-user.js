@@ -9,7 +9,7 @@ export default function useUser() {
     useEffect(() => {
         async function getUserObjByUserId() {
             // A function (firebase service) that gets the user data based on the id.
-            const response = await getUserByUserId(user.uid);
+            const [response] = await getUserByUserId(user.uid);
             setActiveUser(response);
         }
 
