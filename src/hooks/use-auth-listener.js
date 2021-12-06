@@ -1,27 +1,25 @@
-// Check whether a user is logged in or not
-
-import { useState, useEffect, useContext } from "react";
-import FirebaseContext from './../context/firebase';
+import { useState, useEffect, useContext } from 'react';
+import FirebaseContext from '../context/firebase';
 
 export default function useAuthListener() {
-    const [user, setuser] = useState(JSON.parse(localStorage.getItem('authUser')));
-    const { firebase } = useContext(FirebaseContext);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('authUser')));
+  const { firebase } = useContext(FirebaseContext);
 
-    useEffect(() => {
-        const listener = firebase.auth().onAuthStateChanged((authUser) => {
-            if (authUser) {
-                // we have the user, then we can store the user in the local storage
-                localStorage.setItem('authUser', JSON.stringify(authUser));
-                setuser(authUser);
-            } else {
-                // we dont have auth user, therefore cleaning the local storage
-                localStorage.removeItem('authUser');
-                setuser(null);
-            }
-        });
+  useEffect(() => {
+    const listener = firebase.auth().onAuthStateChanged((authUser) => {
+      if (authUser) {
+        // we have a user...therefore we can store the user in localstorage
+        localStorage.setItem('authUser', JSON.stringify(authUser));
+        setUser(authUser);
+      } else {
+        // we don't have an authUser, therefore clear the localstorage
+        localStorage.removeItem('authUser');
+        setUser(null);
+      }
+    });
 
-        return () => listener(); // in order to clean up the listener
-    }, [firebase]);
+    return () => listener();
+  }, [firebase]);
 
-    return { user };
+  return { user };
 }
